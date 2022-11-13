@@ -56,4 +56,82 @@ VALUES ('Natia', 'Vadachkoria', '102', 'natia1@gmail.com', 'Rustaveli.11', '1990
        ('Nana', 'Vadachkoria', '104', 'Nana1@gmail.com', 'Rustaveli.13', '1990-10-12', 'Female', 'Chavchavadze.13', 53, 'TB12423426', 'SeniorAssistant'),
        ('Nato', 'Vadachkoria', '105', 'Nato1@gmail.com', 'Rustaveli.14', '1990-10-13', 'Female', 'Chavchavadze.14', 54, 'TB12423427', 'SeniorAssistant'),
        ('Goga', 'Vadachkoria', '106', 'Goga1@gmail.com', 'Rustaveli.15', '1990-10-14', 'Male', 'Chavchavadze.15', 55, 'TB12423428', 'AssociateProfessor');
+       
+ # დამხმარე მენეჯერების ცხრილი
+drop table if exists Managers;
+
+CREATE TABLE Managers
+(
+    ID                bigint auto_increment,
+    FirstName         varchar(255) not null,
+    LastName          varchar(255) not null,
+    PersonID          varchar(11)  not null unique,
+    Email             varchar(255) not null unique,
+    Address           varchar(255) not null,
+    DateOfBirth       DATE         not null,
+    Sex               varchar(255) not null,
+    Address2          varchar(255),
+    FlatNumber        int,
+    BankAccountNumber varchar(255) not null unique,
+    PRIMARY KEY (ID)
+
+);
+
+INSERT INTO Managers (FirstName, LastName, PersonID, Email, Address, DateOfBirth, Sex, Address2, FlatNumber, BankAccountNumber)
+VALUES ('Tatia', 'Imerlishvili', '107', 'Tatia2@gmail.com', 'Rustaveli.16', '1995-10-10', 'Female', 'Chavchavadze.16', 56, 'TB12423429'),
+       ('Eka', 'Imerlishvili', '108', 'Eka2@gmail.com', 'Rustaveli.17', '1995-10-11', 'Female', 'Chavchavadze.17', 57, 'TB12423419'),
+       ('Nini', 'Imerlishvili', '109', 'Nini2@gmail.com', 'Rustaveli.18', '1995-10-12', 'Female', 'Chavchavadze.18', 58, 'TB12423439'),
+       ('Keta', 'Imerlishvili', '207', 'Keta2@gmail.com', 'Rustaveli.19', '1995-10-13', 'Female', 'Chavchavadze.19', 59, 'TB12423449');
+
+
+#კურსების ცხრილი
+drop table if exists Courses;
+
+CREATE TABLE Courses
+(
+    ID   bigint auto_increment,
+    Name varchar(255) not null,
+    PRIMARY KEY (ID)
+
+);
+
+INSERT INTO Courses (Name)
+VALUES ('Computer science'),
+       ('Mathematics'),
+       ('Philosophy'),
+       ('Biology');
+
+#საგნების ცხრილი
+drop table if exists Subjects;
+
+CREATE TABLE Subjects
+(
+    ID   bigint auto_increment,
+    Name varchar(255) not null,
+    PRIMARY KEY (ID)
+
+);
+
+INSERT INTO Subjects (Name)
+VALUES ('C++'),
+       ('Python'),
+       ('Java'),
+       ('Algorithms'),
+       ('Matlab'),
+       ('Calculus'),
+       ('Algebra'),
+       ('Geometry'),
+       ('MathematicalLogic'),
+       ('Martingales'),
+       ('Ethics'),
+       ('Aesthetics'),
+       ('Logic'),
+       ('PoliticalPhilosophy'),
+       ('Ontology'),
+       ('Anatomy'),
+       ('Genetics'),
+       ('chemistry'),
+       ('Botany'),
+       ('Physics');
+      
       
